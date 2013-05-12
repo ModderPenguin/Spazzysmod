@@ -18,10 +18,26 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
 				generateSurface(world, random, chunkX * 16, chunkZ * 16);
 			case 1:
 				generateEnd(world, random, chunkX * 16, chunkZ * 16);
+			case 10:
+				generateMoonDimensionID(world, random, chunkX * 16, chunkZ * 16);
 				
 		
 		}
 
+	}
+	
+	
+
+	private void generateMoonDimensionID(World world, Random random, int i,
+			int j) {
+		for (int k = 0; k < 6; k++){
+			int Xcoord = i + random.nextInt(16);
+			int Ycoord = random.nextInt(16);
+			int Zcoord = j + random.nextInt(16);
+			
+			(new WorldGenMinable(Spazzysmod.titaniumBlock.blockID, 4)).generate(world, random, Xcoord, Ycoord, Zcoord);
+		}
+		
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {
