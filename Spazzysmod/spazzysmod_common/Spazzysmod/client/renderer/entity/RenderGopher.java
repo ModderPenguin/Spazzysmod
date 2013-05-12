@@ -1,10 +1,10 @@
 package Spazzysmod.client.renderer.entity;
 
-import Spazzysmod.client.model.ModelGopher;
-import Spazzysmod.entity.passive.EntityGopher;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import Spazzysmod.client.model.ModelGopher;
+import Spazzysmod.entity.passive.EntityGopher;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

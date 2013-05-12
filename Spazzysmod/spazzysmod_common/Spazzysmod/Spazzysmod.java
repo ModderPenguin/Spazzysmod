@@ -43,18 +43,31 @@ public class Spazzysmod {
 
     public static Block cheeseBlock;
     public static Block moonPortal;
-    static int moonPortalID;
-    static int cheeseBlockID;
     public static Block moonDirt;
     public static Block moonStone;
     public static Block titaniumBlock;
+    
+    static int cheeseBlockID;
+    static int moonPortalID;
+    static int moonDirtID;
+    static int moonStoneID;
+    static int titaniumBlockID;
+    
     public static Item titaniumIngot;
     public static Item titaniumSword;
+    
+    static int titaniumIngotID;
+    static int titaniumSwordID;
 
     public static Item titaniumHelmet;
-    public static Item titaniumChestPlate;
+    public static Item titaniumChestplate;
     public static Item titaniumLeggings;
     public static Item titaniumBoots;
+    
+    static int titaniumHelmetID;
+    static int titaniumChestplateID;
+    static int titaniumLeggingsID;
+    static int titaniumBootsID;
 
     public static int moonDimensionID = 10;
 
@@ -65,7 +78,42 @@ public class Spazzysmod {
             "TITANIUMARMOR", 33, new int[] { 3, 8, 6, 3 }, 25);
     public static final EnumToolMaterial TITANIUM = EnumHelper.addToolMaterial(
             "TITANIUM", 2, 20000, 10.0F, 7, 10);
+    
 
+    @PreInit
+    public void preInit(FMLPreInitializationEvent event) {
+        Configuration config = new Configuration(
+                event.getSuggestedConfigurationFile());
+        config.load();
+
+        // blocks
+        cheeseBlockID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
+                "Cheese Block ID", 250, "CheeseBlockID").getInt();
+        moonPortalID = config.get(Configuration.CATEGORY_BLOCK,
+                "Moon Portal ID", 500).getInt();
+        moonDirtID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
+                "Moon Dirt ID", 255, "MoonDirtID").getInt();
+        moonStoneID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
+                "Moon Stone ID", 254, "MoonStoneID").getInt();
+        titaniumBlockID = config.get(Configuration.CATEGORY_BLOCK,
+                "Titanium Block ID", 501).getInt();
+        // items
+        titaniumIngotID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Ingot ID", 5000).getInt();
+        titaniumSwordID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Sword ID", 5001).getInt();
+        titaniumHelmetID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Helmet ID", 5002).getInt();
+        titaniumChestplateID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Chestplate ID", 5003).getInt();
+        titaniumLeggingsID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Leggings ID", 5004).getInt();
+        titaniumBootsID = config.get(Configuration.CATEGORY_ITEM,
+                "Titanium Boots ID", 5005).getInt();
+
+        config.save();
+    }
+    
     @Init
     @SuppressWarnings("deprecation")
     public void init(FMLInitializationEvent event) {
@@ -76,8 +124,7 @@ public class Spazzysmod {
         moonPortal = new BlockMoonPortal(moonPortalID)
                 .setUnlocalizedName("portal");
 
-        GameRegistry.registerBlock(cheeseBlock,
-                modid + cheeseBlock.getUnlocalizedName2());
+        GameRegistry.registerBlock(cheeseBlock);
         GameRegistry.registerBlock(moonPortal);
 
         EntityRegistry.addSpawn(EntityGopher.class, 20, 2, 4,
@@ -86,36 +133,27 @@ public class Spazzysmod {
                 BiomeGenBase.desertHills, BiomeGenBase.forestHills,
                 BiomeGenBase.beach, BiomeGenBase.extremeHills,
                 BiomeGenBase.extremeHillsEdge, BiomeGenBase.plains);
-        // EntityRegistry.addSpawn(EntityGopher.class, 5, 2,
-        // 3, EnumCreatureType.ambient, BiomeGenBase.forest,
-        // BiomeGenBase.desert, BiomeGenBase.desertHills,
-        // BiomeGenBase.forestHills, BiomeGenBase.beach,
-        // BiomeGenBase.extremeHills,
-        // BiomeGenBase.extremeHillsEdge,
-        // BiomeGenBase.plains );
         LanguageRegistry.instance().addStringLocalization("entity.Gopher.name",
                 "en_US", "Gopher");
 
-        moonDirt = new BlockMoonDirtBlock(255, Material.rock)
+        moonDirt = new BlockMoonDirtBlock(moonDirtID, Material.rock)
                 .setUnlocalizedName("moonDirt");
         GameRegistry.registerBlock(moonDirt,
                 modid + moonDirt.getUnlocalizedName2());
         LanguageRegistry.addName(moonDirt, "Moon Dirt");
 
-        moonStone = new BlockMoonStoneBlock(254, Material.rock)
+        moonStone = new BlockMoonStoneBlock(moonStoneID, Material.rock)
                 .setUnlocalizedName("moonStone");
-        GameRegistry.registerBlock(moonStone,
-                modid + moonStone.getUnlocalizedName2());
+        GameRegistry.registerBlock(moonStone);
         LanguageRegistry.addName(moonStone, "Moon Stone");
 
-        titaniumBlock = new BlockTitaniumBlock(501, Material.rock)
+        titaniumBlock = new BlockTitaniumBlock(titaniumBlockID, Material.rock)
                 .setUnlocalizedName("titaniumBlock");
-        GameRegistry.registerBlock(titaniumBlock,
-                modid + titaniumBlock.getUnlocalizedName2());
+        GameRegistry.registerBlock(titaniumBlock);
         LanguageRegistry.addName(titaniumBlock, "Titanium Ore");
         GameRegistry.registerWorldGenerator(new TitaniumWorldGenerator());
 
-        titaniumIngot = new ItemTitaniumIngot(5000)
+        titaniumIngot = new ItemTitaniumIngot(titaniumIngotID)
                 .setUnlocalizedName("titaniumIngot");
         LanguageRegistry.addName(titaniumIngot, "Titanium Ingot");
         GameRegistry.registerItem(titaniumIngot, "Titanium Ingot");
@@ -123,7 +161,7 @@ public class Spazzysmod {
         GameRegistry.addSmelting(titaniumBlock.blockID, new ItemStack(
                 titaniumIngot, 1), 1F);
 
-        titaniumHelmet = new TitaniumArmor(5002, TITANIUMARMOR,
+        titaniumHelmet = new TitaniumArmor(titaniumHelmetID, TITANIUMARMOR,
                 ModLoader.addArmor("TITANIUMARMOR"), 0).setUnlocalizedName(
                 "titaniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumHelmet, "Titanium Helmet");
@@ -134,18 +172,18 @@ public class Spazzysmod {
 
         });
 
-        titaniumChestPlate = new TitaniumArmor(5003, TITANIUMARMOR,
+        titaniumChestplate = new TitaniumArmor(titaniumChestplateID, TITANIUMARMOR,
                 ModLoader.addArmor("TITANIUMARMOR"), 1).setUnlocalizedName(
                 "titaniumChestPlate").setCreativeTab(CreativeTabs.tabCombat);
-        LanguageRegistry.addName(titaniumChestPlate, "Titanium Chest Plate");
-        GameRegistry.registerItem(titaniumChestPlate, "Titanium Chest Plate");
-        GameRegistry.addRecipe(new ItemStack(titaniumChestPlate), new Object[] {
+        LanguageRegistry.addName(titaniumChestplate, "Titanium Chestplate");
+        GameRegistry.registerItem(titaniumChestplate, "Titanium Chestplate");
+        GameRegistry.addRecipe(new ItemStack(titaniumChestplate), new Object[] {
                 "X X", "XXX", "XXX", 'X', Spazzysmod.titaniumIngot, 'Y',
                 Item.diamond
 
         });
 
-        titaniumLeggings = new TitaniumArmor(5004, TITANIUMARMOR,
+        titaniumLeggings = new TitaniumArmor(titaniumLeggingsID, TITANIUMARMOR,
                 ModLoader.addArmor("TITANIUMARMOR"), 2).setUnlocalizedName(
                 "titaniumLeggings").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumLeggings, "Titanium Leggings");
@@ -156,7 +194,7 @@ public class Spazzysmod {
 
         });
 
-        titaniumBoots = new TitaniumArmor(5005, TITANIUMARMOR,
+        titaniumBoots = new TitaniumArmor(titaniumBootsID, TITANIUMARMOR,
                 ModLoader.addArmor("TITANIUMARMOR"), 3).setUnlocalizedName(
                 "titaniumBoots").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumBoots, "Titanium Boots");
@@ -167,7 +205,7 @@ public class Spazzysmod {
 
         });
 
-        titaniumSword = new ItemTitaniumSword(5001, TITANIUM)
+        titaniumSword = new ItemTitaniumSword(titaniumSwordID, TITANIUM)
                 .setUnlocalizedName("titaniumSword");
         LanguageRegistry.addName(titaniumSword, "Titanium Sword");
         GameRegistry.registerItem(titaniumSword, "Titanium Sword");
@@ -195,20 +233,6 @@ public class Spazzysmod {
                 WorldProviderMoon.class, false);
         DimensionManager.registerDimension(moonDimensionID, moonDimensionID);
         GameRegistry.addBiome(moonBiome);
-    }
-
-    @PreInit
-    public void preInit(FMLPreInitializationEvent event) {
-        Configuration config = new Configuration(
-                event.getSuggestedConfigurationFile());
-        config.load();
-
-        moonPortalID = config.get(Configuration.CATEGORY_BLOCK,
-                "Moon Portal ID", 500).getInt();
-        cheeseBlockID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
-                "Cheese Block ID", 250, "CheeseBlockID").getInt();
-
-        config.save();
     }
 
     public void registerEntities() {

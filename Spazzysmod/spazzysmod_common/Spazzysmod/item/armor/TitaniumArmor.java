@@ -1,11 +1,11 @@
 package Spazzysmod.item.armor;
 
-import Spazzysmod.Spazzysmod;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
+import Spazzysmod.Spazzysmod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -21,7 +21,7 @@ public class TitaniumArmor extends ItemArmor implements IArmorTextureProvider {
     @Override
     public String getArmorTextureFile(ItemStack itemstack) {
         if (itemstack.itemID == Spazzysmod.titaniumHelmet.itemID
-                || itemstack.itemID == Spazzysmod.titaniumChestPlate.itemID
+                || itemstack.itemID == Spazzysmod.titaniumChestplate.itemID
                 || itemstack.itemID == Spazzysmod.titaniumBoots.itemID)
             return "/mods/Spazzy_Spazzysmod/textures/armor/TITANIUMARMOR_1.png";
 
