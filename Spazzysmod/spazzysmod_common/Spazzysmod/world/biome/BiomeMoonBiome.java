@@ -16,6 +16,6 @@ public class BiomeMoonBiome extends BiomeGenBase {
         this.spawnableWaterCreatureList.clear();
         this.spawnableCaveCreatureList.clear();
         
-        EntityRegistry.addSpawn(EntityGopher.class, 10, 1, 1, EnumCreatureType.creature, this);
+        EntityRegistry.addSpawn(EntityGopher.class, 10, 1, 5, EnumCreatureType.creature, this);
     }
 }
