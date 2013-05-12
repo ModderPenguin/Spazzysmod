@@ -36,7 +36,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Spazzy's mod", name = "Spazzy's Mod", version = "V 0.2")
+@Mod(modid = Spazzysmod.modid, name = "Spazzy's Mod", version = "V 0.2")
 public class Spazzysmod {
 
     public static final String modid = "Spazzy_Spazzysmod";
