@@ -162,7 +162,7 @@ public class Spazzysmod {
                 titaniumIngot, 1), 1F);
 
         titaniumHelmet = new TitaniumArmor(titaniumHelmetID, TITANIUMARMOR,
-                ModLoader.addArmor("TITANIUMARMOR"), 0).setUnlocalizedName(
+                ModLoader.addArmor("TitaniumArmor"), 0).setUnlocalizedName(
                 "titaniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumHelmet, "Titanium Helmet");
         GameRegistry.registerItem(titaniumHelmet, "Titanium Helmet");
@@ -173,7 +173,7 @@ public class Spazzysmod {
         });
 
         titaniumChestplate = new TitaniumArmor(titaniumChestplateID, TITANIUMARMOR,
-                ModLoader.addArmor("TITANIUMARMOR"), 1).setUnlocalizedName(
+                ModLoader.addArmor("TitaniumArmor"), 1).setUnlocalizedName(
                 "titaniumChestPlate").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumChestplate, "Titanium Chestplate");
         GameRegistry.registerItem(titaniumChestplate, "Titanium Chestplate");
@@ -184,7 +184,7 @@ public class Spazzysmod {
         });
 
         titaniumLeggings = new TitaniumArmor(titaniumLeggingsID, TITANIUMARMOR,
-                ModLoader.addArmor("TITANIUMARMOR"), 2).setUnlocalizedName(
+                ModLoader.addArmor("TitaniumArmor"), 2).setUnlocalizedName(
                 "titaniumLeggings").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumLeggings, "Titanium Leggings");
         GameRegistry.registerItem(titaniumLeggings, "Titanium Leggings");
@@ -195,7 +195,7 @@ public class Spazzysmod {
         });
 
         titaniumBoots = new TitaniumArmor(titaniumBootsID, TITANIUMARMOR,
-                ModLoader.addArmor("TITANIUMARMOR"), 3).setUnlocalizedName(
+                ModLoader.addArmor("TitaniumArmor"), 3).setUnlocalizedName(
                 "titaniumBoots").setCreativeTab(CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumBoots, "Titanium Boots");
         GameRegistry.registerItem(titaniumBoots, "Titanium Boots");

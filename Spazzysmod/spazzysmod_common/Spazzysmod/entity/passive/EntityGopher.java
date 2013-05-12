@@ -222,7 +222,7 @@ public class EntityGopher extends EntityTameable {
 
     @Override
     public int getMaxHealth() {
-        return this.isTamed() ? 20 : 8;
+        return this.isTamed() ? 20 : 20;
     }
 
     /**
