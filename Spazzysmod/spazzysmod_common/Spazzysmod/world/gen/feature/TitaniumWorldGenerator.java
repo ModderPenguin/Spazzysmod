@@ -21,8 +21,9 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
         case 1:
             generateEnd(world, random, chunkX * 16, chunkZ * 16);
         case 10:
-            generateMoonDimensionID(world, random, chunkX * 16, chunkZ * 16);
-
+            generateMoon(world, random, chunkX * 16, chunkZ * 16);
+        case 12:
+            generateMars(world, random, chunkX * 16, chunkZ * 16);
         }
 
     }
@@ -31,16 +32,19 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
 
     }
 
-    private void generateMoonDimensionID(World world, Random random, int i,
-            int j) {
-        for (int k = 0; k < 6; k++) {
-            int Xcoord = i + random.nextInt(16);
-            int Ycoord = random.nextInt(16);
-            int Zcoord = j + random.nextInt(16);
+    private void generateMoon(World world, Random random, int i, int j) {
+        for (int a = 0; a < 6; a++) {
+            int randPosX = i + random.nextInt(16);
+            int randPosY = random.nextInt(16);
+            int randPosZ = j + random.nextInt(16);
 
-            (new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4))
-                    .generate(world, random, Xcoord, Ycoord, Zcoord);
+            new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4)
+                    .generate(world, random, randPosX, randPosY, randPosZ);
         }
+
+    }
+
+    private void generateMars(World world, Random random, int i, int j) {
 
     }
 
@@ -49,13 +53,13 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int i, int j) {
-        for (int k = 0; k < 6; k++) {
-            int Xcoord = i + random.nextInt(16);
-            int Ycoord = random.nextInt(16);
-            int Zcoord = j + random.nextInt(16);
+        for (int a = 0; a < 6; a++) {
+            int randPosX = i + random.nextInt(16);
+            int randPosY = random.nextInt(16);
+            int randPosZ = j + random.nextInt(16);
 
-            (new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4))
-                    .generate(world, random, Xcoord, Ycoord, Zcoord);
+            new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4)
+                    .generate(world, random, randPosX, randPosY, randPosZ);
         }
     }
 

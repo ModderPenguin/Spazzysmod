@@ -10,7 +10,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class SpazzysEntitys {
-    
+
     public static void registerEntitySpawns() {
         EntityRegistry.addSpawn(EntityGopher.class, 20, 2, 4,
                 EnumCreatureType.creature, SpazzysBiomes.moonBiome,
@@ -21,7 +21,7 @@ public class SpazzysEntitys {
         LanguageRegistry.instance().addStringLocalization("entity.Gopher.name",
                 "en_US", "Gopher");
     }
-    
+
     public static void registerEntities() {
         EntityRegistry.registerGlobalEntityID(EntityGopher.class, "Gopher",
                 EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0xFFFFFF);

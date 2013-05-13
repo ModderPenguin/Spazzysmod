@@ -27,13 +27,13 @@ public class Spazzysmod {
     @Init
     public void init(FMLInitializationEvent event) {
         SpazzysBlocks.initBlocks();
-        
+
         SpazzysItems.initItems();
-        
+
         SpazzysTabs.nameTabs();
-        
+
         SpazzysDimensions.registerDimensions();
-        
+
         SpazzysEntitys.registerEntitySpawns();
         SpazzysEntitys.registerEntities();
     }

@@ -15,23 +15,23 @@ public class MoonBlocks {
 
     @SuppressWarnings("deprecation")
     public static void initBlocks() {
-        cheeseBlock = new BlockCheeseBlock(SpazzysConfig.cheeseBlockID, Material.rock)
-                .setUnlocalizedName("cheeseBlock");
+        cheeseBlock = new BlockCheeseBlock(SpazzysConfig.cheeseBlockID,
+                Material.rock).setUnlocalizedName("cheeseBlock");
         GameRegistry.registerBlock(cheeseBlock);
         LanguageRegistry.addName(cheeseBlock, "Block of Cheese");
-        
+
         moonPortal = new BlockMoonPortal(SpazzysConfig.moonPortalID)
                 .setUnlocalizedName("portal");
         GameRegistry.registerBlock(moonPortal);
         LanguageRegistry.addName(moonPortal, "Moon Portal");
 
-        moonDirt = new BlockMoonDirtBlock(SpazzysConfig.moonDirtID, Material.rock)
-                .setUnlocalizedName("moonDirt");
+        moonDirt = new BlockMoonDirtBlock(SpazzysConfig.moonDirtID,
+                Material.rock).setUnlocalizedName("moonDirt");
         GameRegistry.registerBlock(moonDirt);
         LanguageRegistry.addName(moonDirt, "Moon Dirt");
 
-        moonStone = new BlockMoonStoneBlock(SpazzysConfig.moonStoneID, Material.rock)
-                .setUnlocalizedName("moonStone");
+        moonStone = new BlockMoonStoneBlock(SpazzysConfig.moonStoneID,
+                Material.rock).setUnlocalizedName("moonStone");
         GameRegistry.registerBlock(moonStone);
         LanguageRegistry.addName(moonStone, "Moon Stone");
     }

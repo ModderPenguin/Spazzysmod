@@ -1,9 +1,9 @@
 package spazzysmod.blocks;
 
-import spazzysmod.Spazzysmod;
-import spazzysmod.config.SpazzysConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import spazzysmod.Spazzysmod;
+import spazzysmod.config.SpazzysConfig;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

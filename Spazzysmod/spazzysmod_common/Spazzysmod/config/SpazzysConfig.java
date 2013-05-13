@@ -3,7 +3,7 @@ package spazzysmod.config;
 import net.minecraftforge.common.Configuration;
 
 public class SpazzysConfig {
-    
+
     public static int cheeseBlockID;
     public static int moonPortalID;
     public static int moonDirtID;
@@ -12,17 +12,17 @@ public class SpazzysConfig {
     public static int marsRockID;
     public static int redRockID;
     public static int marsPortalID;
-    
+
     public static int titaniumIngotID;
     public static int titaniumSwordID;
-    
+
     public static int titaniumHelmetID;
     public static int titaniumChestplateID;
     public static int titaniumLeggingsID;
     public static int titaniumBootsID;
-    
+
     private static Configuration config;
-    
+
     public static void initConfig(Configuration configuration) {
         config = configuration;
         config.load();

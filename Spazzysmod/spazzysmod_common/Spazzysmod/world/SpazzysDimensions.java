@@ -1,14 +1,14 @@
 package spazzysmod.world;
 
-import spazzysmod.world.biome.SpazzysBiomes;
 import net.minecraftforge.common.DimensionManager;
+import spazzysmod.world.biome.SpazzysBiomes;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class SpazzysDimensions {
-    
+
     public static int moonDimensionID = 10;
     public static int marsDimensionID = 12;
-    
+
     public static void registerDimensions() {
         DimensionManager.registerProviderType(moonDimensionID,
                 WorldProviderMoon.class, false);
