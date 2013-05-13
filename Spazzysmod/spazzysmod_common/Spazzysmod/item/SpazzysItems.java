@@ -1,12 +1,12 @@
 package spazzysmod.item;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import spazzysmod.config.SpazzysConfig;
+import spazzysmod.creativetab.SpazzysTabs;
 import spazzysmod.item.armor.TitaniumArmor;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -28,40 +28,43 @@ public class SpazzysItems {
 
     public static void initItems() {
         titaniumIngot = new ItemTitaniumIngot(SpazzysConfig.titaniumIngotID)
-                .setUnlocalizedName("titaniumIngot");
+                .setUnlocalizedName("titaniumIngot").setCreativeTab(
+                        SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumIngot, "Titanium Ingot");
         GameRegistry.registerItem(titaniumIngot, "Titanium Ingot");
 
         titaniumHelmet = new TitaniumArmor(SpazzysConfig.titaniumHelmetID,
                 TITANIUMARMOR, ModLoader.addArmor("TitaniumArmor"), 0)
                 .setUnlocalizedName("titaniumHelmet").setCreativeTab(
-                        CreativeTabs.tabCombat);
+                        SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumHelmet, "Titanium Helmet");
         GameRegistry.registerItem(titaniumHelmet, "Titanium Helmet");
 
         titaniumChestplate = new TitaniumArmor(
                 SpazzysConfig.titaniumChestplateID, TITANIUMARMOR,
                 ModLoader.addArmor("TitaniumArmor"), 1).setUnlocalizedName(
-                "titaniumChestPlate").setCreativeTab(CreativeTabs.tabCombat);
+                "titaniumChestPlate")
+                .setCreativeTab(SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumChestplate, "Titanium Chestplate");
         GameRegistry.registerItem(titaniumChestplate, "Titanium Chestplate");
 
         titaniumLeggings = new TitaniumArmor(SpazzysConfig.titaniumLeggingsID,
                 TITANIUMARMOR, ModLoader.addArmor("TitaniumArmor"), 2)
                 .setUnlocalizedName("titaniumLeggings").setCreativeTab(
-                        CreativeTabs.tabCombat);
+                        SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumLeggings, "Titanium Leggings");
         GameRegistry.registerItem(titaniumLeggings, "Titanium Leggings");
 
         titaniumBoots = new TitaniumArmor(SpazzysConfig.titaniumBootsID,
                 TITANIUMARMOR, ModLoader.addArmor("TitaniumArmor"), 3)
                 .setUnlocalizedName("titaniumBoots").setCreativeTab(
-                        CreativeTabs.tabCombat);
+                        SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumBoots, "Titanium Boots");
         GameRegistry.registerItem(titaniumBoots, "Titanium Boots");
 
         titaniumSword = new ItemTitaniumSword(SpazzysConfig.titaniumSwordID,
-                TITANIUM).setUnlocalizedName("titaniumSword");
+                TITANIUM).setUnlocalizedName("titaniumSword").setCreativeTab(
+                SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumSword, "Titanium Sword");
         GameRegistry.registerItem(titaniumSword, "Titanium Sword");
     }
