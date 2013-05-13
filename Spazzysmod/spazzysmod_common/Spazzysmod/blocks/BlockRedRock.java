@@ -1,9 +1,10 @@
-package Spazzysmod.blocks;
+package spazzysmod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.Spazzysmod;
+import spazzysmod.creativetab.SpazzysTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -11,7 +12,7 @@ public class BlockRedRock extends Block {
 
     public BlockRedRock(int id, Material par2Material) {
         super(id, par2Material);
-        this.setCreativeTab(Spazzysmod.MoonTab);
+        this.setCreativeTab(SpazzysTabs.tabMoon);
 
     }
 

@@ -1,11 +1,11 @@
-package Spazzysmod.world;
+package spazzysmod.world;
 
 import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import Spazzysmod.Spazzysmod;
-import Spazzysmod.world.chunk.ChunkManagerMoon;
+import spazzysmod.Spazzysmod;
+import spazzysmod.world.chunk.ChunkManagerMoon;
 
 public class WorldProviderMoon extends WorldProvider {
 

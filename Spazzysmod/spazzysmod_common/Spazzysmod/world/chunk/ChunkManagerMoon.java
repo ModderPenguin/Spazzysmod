@@ -1,4 +1,4 @@
-package Spazzysmod.world.chunk;
+package spazzysmod.world.chunk;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;
@@ -40,7 +40,7 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.blocks.MoonBlocks;
 
 public class ChunkManagerMoon implements IChunkProvider {
 
@@ -261,9 +261,9 @@ public class ChunkManagerMoon implements IChunkProvider {
 
                             for (int var51 = 0; var51 < 4; ++var51) {
                                 if ((var47 += var49) > 0.0D) {
-                                    par3ArrayOfByte[var43 += var44] = (byte) Spazzysmod.moonStone.blockID;
+                                    par3ArrayOfByte[var43 += var44] = (byte) MoonBlocks.moonStone.blockID;
                                 } else if (var12 * 8 + var31 < var6) {
-                                    par3ArrayOfByte[var43 += var44] = (byte) Spazzysmod.moonDirt.blockID;
+                                    par3ArrayOfByte[var43 += var44] = (byte) MoonBlocks.moonDirt.blockID;
                                 } else {
                                     par3ArrayOfByte[var43 += var44] = 0;
                                 }
@@ -511,7 +511,7 @@ public class ChunkManagerMoon implements IChunkProvider {
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = this.rand.nextInt(128);
             var14 = var5 + this.rand.nextInt(16) + 8;
-            (new WorldGenLakes(Spazzysmod.moonDirt.blockID)).generate(
+            (new WorldGenLakes(MoonBlocks.moonDirt.blockID)).generate(
                     this.worldObj, this.rand, var12, var13, var14);
         }
 
@@ -663,11 +663,11 @@ public class ChunkManagerMoon implements IChunkProvider {
 
                         if (var18 == 0) {
                             var13 = -1;
-                        } else if (var18 == Spazzysmod.moonDirt.blockID) {
+                        } else if (var18 == MoonBlocks.moonDirt.blockID) {
                             if (var13 == -1) {
                                 if (var12 <= 0) {
                                     var14 = 0;
-                                    var15 = (byte) Spazzysmod.moonStone.blockID;
+                                    var15 = (byte) MoonBlocks.moonStone.blockID;
                                 } else if (var16 >= var5 - 4
                                         && var16 <= var5 + 1) {
                                     var14 = var10.topBlock;
@@ -681,9 +681,9 @@ public class ChunkManagerMoon implements IChunkProvider {
                                     // the same no matter
                                     // what temperature
                                     if (var11 < 0.15F) {
-                                        var14 = (byte) Spazzysmod.moonDirt.blockID;
+                                        var14 = (byte) MoonBlocks.moonDirt.blockID;
                                     } else {
-                                        var14 = (byte) Spazzysmod.moonDirt.blockID;
+                                        var14 = (byte) MoonBlocks.moonDirt.blockID;
                                     }
                                 }
 

@@ -1,4 +1,4 @@
-package Spazzysmod.world;
+package spazzysmod.world;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.PortalPosition;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.blocks.MarsBlocks;
 
 public class TeleporterMarsPortal extends Teleporter {
 
@@ -213,7 +213,7 @@ public class TeleporterMarsPortal extends Teleporter {
                         var24 = var16 + (var20 - 1) * var18 - var19 * var30;
                         var33 = var21 < 0;
                         this.field_85192_a.setBlock(var22, var23, var24,
-                                var33 ? Spazzysmod.redRock.blockID : 0, 2, 2);
+                                var33 ? MarsBlocks.redRock.blockID : 0, 2, 2);
                     }
                 }
             }
@@ -229,8 +229,8 @@ public class TeleporterMarsPortal extends Teleporter {
                     var33 = var20 == 0 || var20 == 3 || var21 == -1
                             || var21 == 3;
                     this.field_85192_a.setBlock(var22, var23, var24,
-                            var33 ? Spazzysmod.redRock.blockID
-                                    : Spazzysmod.marsPortal.blockID, 2, 2);
+                            var33 ? MarsBlocks.redRock.blockID
+                                    : MarsBlocks.marsPortal.blockID, 2, 2);
                 }
             }
 
@@ -281,9 +281,9 @@ public class TeleporterMarsPortal extends Teleporter {
                     double var24 = var23 + 0.5D - par1Entity.posZ;
 
                     for (int var26 = this.field_85192_a.getActualHeight() - 1; var26 >= 0; --var26) {
-                        if (this.field_85192_a.getBlockId(var48, var26, var23) == Spazzysmod.marsPortal.blockID) {
+                        if (this.field_85192_a.getBlockId(var48, var26, var23) == MarsBlocks.marsPortal.blockID) {
                             while (this.field_85192_a.getBlockId(var48,
-                                    var26 - 1, var23) == Spazzysmod.marsPortal.blockID) {
+                                    var26 - 1, var23) == MarsBlocks.marsPortal.blockID) {
                                 --var26;
                             }
 
@@ -315,19 +315,19 @@ public class TeleporterMarsPortal extends Teleporter {
             var27 = var14 + 0.5D;
             int var50 = -1;
 
-            if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == Spazzysmod.marsPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == MarsBlocks.marsPortal.blockID) {
                 var50 = 2;
             }
 
-            if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == Spazzysmod.marsPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == MarsBlocks.marsPortal.blockID) {
                 var50 = 0;
             }
 
-            if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == Spazzysmod.marsPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == MarsBlocks.marsPortal.blockID) {
                 var50 = 3;
             }
 
-            if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == Spazzysmod.marsPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == MarsBlocks.marsPortal.blockID) {
                 var50 = 1;
             }
 
@@ -441,7 +441,7 @@ public class TeleporterMarsPortal extends Teleporter {
                         int var19 = var11 + var15 * var13 - var14 * var12;
                         boolean var20 = var16 < 0;
                         this.field_85192_a.setBlock(var17, var18, var19,
-                                var20 ? Spazzysmod.redRock.blockID : 0, 2, 2);
+                                var20 ? MarsBlocks.redRock.blockID : 0, 2, 2);
                     }
                 }
             }

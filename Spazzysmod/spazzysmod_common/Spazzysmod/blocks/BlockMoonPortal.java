@@ -1,4 +1,4 @@
-package Spazzysmod.blocks;
+package spazzysmod.blocks;
 
 import java.util.Random;
 
@@ -11,8 +11,8 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import Spazzysmod.Spazzysmod;
-import Spazzysmod.world.TeleporterMoonPortal;
+import spazzysmod.Spazzysmod;
+import spazzysmod.world.TeleporterMoonPortal;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -119,7 +119,7 @@ public class BlockMoonPortal extends BlockBreakable {
             ;
         }
 
-        if (par1World.getBlockId(par2, var8 - 1, par4) != Spazzysmod.cheeseBlock.blockID) {
+        if (par1World.getBlockId(par2, var8 - 1, par4) != MoonBlocks.cheeseBlock.blockID) {
             par1World.setBlock(par2, par3, par4, 0, 2, 2);
         } else {
             int var9;
@@ -130,7 +130,7 @@ public class BlockMoonPortal extends BlockBreakable {
             }
 
             if (var9 == 3
-                    && par1World.getBlockId(par2, var8 + var9, par4) == Spazzysmod.cheeseBlock.blockID) {
+                    && par1World.getBlockId(par2, var8 + var9, par4) == MoonBlocks.cheeseBlock.blockID) {
                 boolean var10 = par1World.getBlockId(par2 - 1, par3, par4) == this.blockID
                         || par1World.getBlockId(par2 + 1, par3, par4) == this.blockID;
                 boolean var11 = par1World.getBlockId(par2, par3, par4 - 1) == this.blockID
@@ -139,10 +139,10 @@ public class BlockMoonPortal extends BlockBreakable {
                 if (var10 && var11) {
                     par1World.setBlock(par2, par3, par4, 0, 2, 2);
                 } else {
-                    if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != Spazzysmod.cheeseBlock.blockID || par1World
+                    if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != MoonBlocks.cheeseBlock.blockID || par1World
                             .getBlockId(par2 - var6, par3, par4 - var7) != this.blockID)
                             && (par1World.getBlockId(par2 - var6, par3, par4
-                                    - var7) != Spazzysmod.cheeseBlock.blockID || par1World
+                                    - var7) != MoonBlocks.cheeseBlock.blockID || par1World
                                     .getBlockId(par2 + var6, par3, par4 + var7) != this.blockID)) {
                         par1World.setBlock(par2, par3, par4, 0, 2, 2);
                     }
@@ -270,13 +270,13 @@ public class BlockMoonPortal extends BlockBreakable {
         byte var5 = 0;
         byte var6 = 0;
 
-        if (par1World.getBlockId(par2 - 1, par3, par4) == Spazzysmod.cheeseBlock.blockID
-                || par1World.getBlockId(par2 + 1, par3, par4) == Spazzysmod.cheeseBlock.blockID) {
+        if (par1World.getBlockId(par2 - 1, par3, par4) == MoonBlocks.cheeseBlock.blockID
+                || par1World.getBlockId(par2 + 1, par3, par4) == MoonBlocks.cheeseBlock.blockID) {
             var5 = 1;
         }
 
-        if (par1World.getBlockId(par2, par3, par4 - 1) == Spazzysmod.cheeseBlock.blockID
-                || par1World.getBlockId(par2, par3, par4 + 1) == Spazzysmod.cheeseBlock.blockID) {
+        if (par1World.getBlockId(par2, par3, par4 - 1) == MoonBlocks.cheeseBlock.blockID
+                || par1World.getBlockId(par2, par3, par4 + 1) == MoonBlocks.cheeseBlock.blockID) {
             var6 = 1;
         }
 
@@ -301,10 +301,10 @@ public class BlockMoonPortal extends BlockBreakable {
                                 par3 + var8, par4 + var6 * var7);
 
                         if (var9) {
-                            if (var10 != Spazzysmod.cheeseBlock.blockID)
+                            if (var10 != MoonBlocks.cheeseBlock.blockID)
                                 return false;
                         } else if (var10 != 0
-                                && var10 != Spazzysmod.moonPortal.blockID)
+                                && var10 != MoonBlocks.moonPortal.blockID)
                             return false;
                     }
                 }

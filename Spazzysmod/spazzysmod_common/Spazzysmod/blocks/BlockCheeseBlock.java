@@ -1,10 +1,10 @@
-package Spazzysmod.blocks;
+package spazzysmod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.Spazzysmod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

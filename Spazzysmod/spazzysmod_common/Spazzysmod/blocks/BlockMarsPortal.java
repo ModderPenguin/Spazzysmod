@@ -1,4 +1,4 @@
-package Spazzysmod.blocks;
+package spazzysmod.blocks;
 
 import java.util.Random;
 
@@ -10,8 +10,9 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import Spazzysmod.Spazzysmod;
-import Spazzysmod.world.TeleporterMarsPortal;
+import spazzysmod.Spazzysmod;
+import spazzysmod.creativetab.SpazzysTabs;
+import spazzysmod.world.TeleporterMarsPortal;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,7 +21,7 @@ public class BlockMarsPortal extends BlockBreakable {
     public BlockMarsPortal(int par1) {
         super(par1, "portal", Material.portal, false);
         this.setTickRandomly(true);
-        this.setCreativeTab(Spazzysmod.MarsTab);
+        this.setCreativeTab(SpazzysTabs.tabMars);
     }
 
     /**
@@ -118,7 +119,7 @@ public class BlockMarsPortal extends BlockBreakable {
             ;
         }
 
-        if (par1World.getBlockId(par2, var8 - 1, par4) != Spazzysmod.redRock.blockID) {
+        if (par1World.getBlockId(par2, var8 - 1, par4) != MarsBlocks.redRock.blockID) {
             par1World.setBlock(par2, par3, par4, 0, 2, 2);
         } else {
             int var9;
@@ -129,7 +130,7 @@ public class BlockMarsPortal extends BlockBreakable {
             }
 
             if (var9 == 3
-                    && par1World.getBlockId(par2, var8 + var9, par4) == Spazzysmod.redRock.blockID) {
+                    && par1World.getBlockId(par2, var8 + var9, par4) == MarsBlocks.redRock.blockID) {
                 boolean var10 = par1World.getBlockId(par2 - 1, par3, par4) == this.blockID
                         || par1World.getBlockId(par2 + 1, par3, par4) == this.blockID;
                 boolean var11 = par1World.getBlockId(par2, par3, par4 - 1) == this.blockID
@@ -138,10 +139,10 @@ public class BlockMarsPortal extends BlockBreakable {
                 if (var10 && var11) {
                     par1World.setBlock(par2, par3, par4, 0, 2, 2);
                 } else {
-                    if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != Spazzysmod.redRock.blockID || par1World
+                    if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != MarsBlocks.redRock.blockID || par1World
                             .getBlockId(par2 - var6, par3, par4 - var7) != this.blockID)
                             && (par1World.getBlockId(par2 - var6, par3, par4
-                                    - var7) != Spazzysmod.redRock.blockID || par1World
+                                    - var7) != MarsBlocks.redRock.blockID || par1World
                                     .getBlockId(par2 + var6, par3, par4 + var7) != this.blockID)) {
                         par1World.setBlock(par2, par3, par4, 0, 2, 2);
                     }
@@ -269,13 +270,13 @@ public class BlockMarsPortal extends BlockBreakable {
         byte var5 = 0;
         byte var6 = 0;
 
-        if (par1World.getBlockId(par2 - 1, par3, par4) == Spazzysmod.redRock.blockID
-                || par1World.getBlockId(par2 + 1, par3, par4) == Spazzysmod.redRock.blockID) {
+        if (par1World.getBlockId(par2 - 1, par3, par4) == MarsBlocks.redRock.blockID
+                || par1World.getBlockId(par2 + 1, par3, par4) == MarsBlocks.redRock.blockID) {
             var5 = 1;
         }
 
-        if (par1World.getBlockId(par2, par3, par4 - 1) == Spazzysmod.redRock.blockID
-                || par1World.getBlockId(par2, par3, par4 + 1) == Spazzysmod.redRock.blockID) {
+        if (par1World.getBlockId(par2, par3, par4 - 1) == MarsBlocks.redRock.blockID
+                || par1World.getBlockId(par2, par3, par4 + 1) == MarsBlocks.redRock.blockID) {
             var6 = 1;
         }
 
@@ -300,10 +301,10 @@ public class BlockMarsPortal extends BlockBreakable {
                                 par3 + var8, par4 + var6 * var7);
 
                         if (var9) {
-                            if (var10 != Spazzysmod.redRock.blockID)
+                            if (var10 != MarsBlocks.redRock.blockID)
                                 return false;
                         } else if (var10 != 0
-                                && var10 != Spazzysmod.marsPortal.blockID)
+                                && var10 != MarsBlocks.marsPortal.blockID)
                             return false;
                     }
                 }

@@ -1,11 +1,11 @@
-package Spazzysmod.world.gen.feature;
+package spazzysmod.world.gen.feature;
 
 import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.blocks.SpazzysBlocks;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class TitaniumWorldGenerator implements IWorldGenerator {
@@ -38,7 +38,7 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
             int Ycoord = random.nextInt(16);
             int Zcoord = j + random.nextInt(16);
 
-            (new WorldGenMinable(Spazzysmod.titaniumBlock.blockID, 4))
+            (new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4))
                     .generate(world, random, Xcoord, Ycoord, Zcoord);
         }
 
@@ -54,7 +54,7 @@ public class TitaniumWorldGenerator implements IWorldGenerator {
             int Ycoord = random.nextInt(16);
             int Zcoord = j + random.nextInt(16);
 
-            (new WorldGenMinable(Spazzysmod.titaniumBlock.blockID, 4))
+            (new WorldGenMinable(SpazzysBlocks.titaniumBlock.blockID, 4))
                     .generate(world, random, Xcoord, Ycoord, Zcoord);
         }
     }

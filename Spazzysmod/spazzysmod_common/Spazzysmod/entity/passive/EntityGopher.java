@@ -1,4 +1,4 @@
-package Spazzysmod.entity.passive;
+package spazzysmod.entity.passive;
 
 import net.minecraft.block.BlockCloth;
 import net.minecraft.entity.Entity;
@@ -31,7 +31,7 @@ import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.Spazzysmod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

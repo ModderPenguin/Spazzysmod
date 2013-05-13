@@ -1,4 +1,4 @@
-package Spazzysmod.world;
+package spazzysmod.world;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.PortalPosition;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
-import Spazzysmod.Spazzysmod;
+import spazzysmod.blocks.MoonBlocks;
 
 public class TeleporterMoonPortal extends Teleporter {
 
@@ -213,7 +213,7 @@ public class TeleporterMoonPortal extends Teleporter {
                         var24 = var16 + (var20 - 1) * var18 - var19 * var30;
                         var33 = var21 < 0;
                         this.field_85192_a.setBlock(var22, var23, var24,
-                                var33 ? Spazzysmod.cheeseBlock.blockID : 0, 2,
+                                var33 ? MoonBlocks.cheeseBlock.blockID : 0, 2,
                                 2);
                     }
                 }
@@ -230,8 +230,8 @@ public class TeleporterMoonPortal extends Teleporter {
                     var33 = var20 == 0 || var20 == 3 || var21 == -1
                             || var21 == 3;
                     this.field_85192_a.setBlock(var22, var23, var24,
-                            var33 ? Spazzysmod.cheeseBlock.blockID
-                                    : Spazzysmod.moonPortal.blockID, 2, 2);
+                            var33 ? MoonBlocks.cheeseBlock.blockID
+                                    : MoonBlocks.moonPortal.blockID, 2, 2);
                 }
             }
 
@@ -282,9 +282,9 @@ public class TeleporterMoonPortal extends Teleporter {
                     double var24 = var23 + 0.5D - par1Entity.posZ;
 
                     for (int var26 = this.field_85192_a.getActualHeight() - 1; var26 >= 0; --var26) {
-                        if (this.field_85192_a.getBlockId(var48, var26, var23) == Spazzysmod.moonPortal.blockID) {
+                        if (this.field_85192_a.getBlockId(var48, var26, var23) == MoonBlocks.moonPortal.blockID) {
                             while (this.field_85192_a.getBlockId(var48,
-                                    var26 - 1, var23) == Spazzysmod.moonPortal.blockID) {
+                                    var26 - 1, var23) == MoonBlocks.moonPortal.blockID) {
                                 --var26;
                             }
 
@@ -316,19 +316,19 @@ public class TeleporterMoonPortal extends Teleporter {
             var27 = var14 + 0.5D;
             int var50 = -1;
 
-            if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == Spazzysmod.moonPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == MoonBlocks.moonPortal.blockID) {
                 var50 = 2;
             }
 
-            if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == Spazzysmod.moonPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == MoonBlocks.moonPortal.blockID) {
                 var50 = 0;
             }
 
-            if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == Spazzysmod.moonPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == MoonBlocks.moonPortal.blockID) {
                 var50 = 3;
             }
 
-            if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == Spazzysmod.moonPortal.blockID) {
+            if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == MoonBlocks.moonPortal.blockID) {
                 var50 = 1;
             }
 
@@ -442,7 +442,7 @@ public class TeleporterMoonPortal extends Teleporter {
                         int var19 = var11 + var15 * var13 - var14 * var12;
                         boolean var20 = var16 < 0;
                         this.field_85192_a.setBlock(var17, var18, var19,
-                                var20 ? Spazzysmod.cheeseBlock.blockID : 0, 2,
+                                var20 ? MoonBlocks.cheeseBlock.blockID : 0, 2,
                                 2);
                     }
                 }
