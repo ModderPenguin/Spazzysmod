@@ -11,7 +11,7 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import spazzysmod.Spazzysmod;
+import spazzysmod.world.SpazzysDimensions;
 import spazzysmod.world.TeleporterMoonPortal;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -75,15 +75,15 @@ public class BlockMoonPortal extends BlockBreakable {
                 && par5Entity.riddenByEntity == null) {
             if (par5Entity instanceof EntityPlayerMP) {
                 EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
-                if (par5Entity.dimension != Spazzysmod.moonDimensionID) {
+                if (par5Entity.dimension != SpazzysDimensions.moonDimensionID) {
                     thePlayer.mcServer
                             .getConfigurationManager()
                             .transferPlayerToDimension(
                                     thePlayer,
-                                    Spazzysmod.moonDimensionID,
+                                    SpazzysDimensions.moonDimensionID,
                                     new TeleporterMoonPortal(
                                             thePlayer.mcServer
-                                                    .worldServerForDimension(Spazzysmod.moonDimensionID)));
+                                                    .worldServerForDimension(SpazzysDimensions.moonDimensionID)));
                 } else {
                     thePlayer.mcServer.getConfigurationManager()
                             .transferPlayerToDimension(

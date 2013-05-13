@@ -10,8 +10,8 @@ import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import spazzysmod.Spazzysmod;
 import spazzysmod.creativetab.SpazzysTabs;
+import spazzysmod.world.SpazzysDimensions;
 import spazzysmod.world.TeleporterMarsPortal;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -75,15 +75,15 @@ public class BlockMarsPortal extends BlockBreakable {
                 && par5Entity.riddenByEntity == null) {
             if (par5Entity instanceof EntityPlayerMP) {
                 EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
-                if (par5Entity.dimension != Spazzysmod.marsDimensionID) {
+                if (par5Entity.dimension != SpazzysDimensions.marsDimensionID) {
                     thePlayer.mcServer
                             .getConfigurationManager()
                             .transferPlayerToDimension(
                                     thePlayer,
-                                    Spazzysmod.marsDimensionID,
+                                    SpazzysDimensions.marsDimensionID,
                                     new TeleporterMarsPortal(
                                             thePlayer.mcServer
-                                                    .worldServerForDimension(Spazzysmod.marsDimensionID)));
+                                                    .worldServerForDimension(SpazzysDimensions.marsDimensionID)));
                 } else {
                     thePlayer.mcServer.getConfigurationManager()
                             .transferPlayerToDimension(

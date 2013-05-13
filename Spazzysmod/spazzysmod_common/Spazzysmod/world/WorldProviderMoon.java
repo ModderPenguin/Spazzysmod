@@ -4,7 +4,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import spazzysmod.Spazzysmod;
+import spazzysmod.world.biome.SpazzysBiomes;
 import spazzysmod.world.chunk.ChunkManagerMoon;
 
 public class WorldProviderMoon extends WorldProvider {
@@ -79,10 +79,10 @@ public class WorldProviderMoon extends WorldProvider {
 
     @Override
     public void registerWorldChunkManager() {
-        this.worldChunkMgr = new WorldChunkManagerHell(Spazzysmod.moonBiome,
+        this.worldChunkMgr = new WorldChunkManagerHell(SpazzysBiomes.moonBiome,
                 1.0F, 0.0F);
         this.isHellWorld = false;
         this.hasNoSky = true;
-        this.dimensionId = Spazzysmod.moonDimensionID;
+        this.dimensionId = SpazzysDimensions.moonDimensionID;
     }
 }

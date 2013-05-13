@@ -4,7 +4,7 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import spazzysmod.Spazzysmod;
+import spazzysmod.world.biome.SpazzysBiomes;
 import spazzysmod.world.chunk.ChunkManagerMars;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -16,11 +16,11 @@ public class WorldProviderMars extends WorldProvider {
      */
     @Override
     public void registerWorldChunkManager() {
-        this.worldChunkMgr = new WorldChunkManagerHell(Spazzysmod.marsBiome,
+        this.worldChunkMgr = new WorldChunkManagerHell(SpazzysBiomes.marsBiome,
                 1.0F, 0.0F);
         this.isHellWorld = true;
         this.hasNoSky = true;
-        this.dimensionId = 12;
+        this.dimensionId = SpazzysDimensions.marsDimensionID;
     }
 
     @Override
