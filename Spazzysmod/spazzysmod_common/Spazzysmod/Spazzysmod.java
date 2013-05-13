@@ -48,10 +48,11 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class Spazzysmod {
 
     public static final String modid = "Spazzy_Spazzysmod";
-    
+
     public static CreativeTabs MoonTab = new TabMoon("MoonTab");
-	public static CreativeTabs MarsTab = new TabMars("MarsTab");
-	public static CreativeTabs SolarSystemTab = new TabSolarSystem("SolarSystemTab");
+    public static CreativeTabs MarsTab = new TabMars("MarsTab");
+    public static CreativeTabs SolarSystemTab = new TabSolarSystem(
+            "SolarSystemTab");
 
     public static Block cheeseBlock;
     public static Block moonPortal;
@@ -61,19 +62,19 @@ public class Spazzysmod {
     public static Block marsRock;
     public static Block redRock;
     public static Block marsPortal;
-    
+
     static int cheeseBlockID;
     static int moonPortalID;
     static int moonDirtID;
     static int moonStoneID;
     static int titaniumBlockID;
     static int marsRockID;
-	static int redRockID;
-	static int marsPortalID;
-    
+    static int redRockID;
+    static int marsPortalID;
+
     public static Item titaniumIngot;
     public static Item titaniumSword;
-    
+
     static int titaniumIngotID;
     static int titaniumSwordID;
 
@@ -81,7 +82,7 @@ public class Spazzysmod {
     public static Item titaniumChestplate;
     public static Item titaniumLeggings;
     public static Item titaniumBoots;
-    
+
     static int titaniumHelmetID;
     static int titaniumChestplateID;
     static int titaniumLeggingsID;
@@ -92,15 +93,14 @@ public class Spazzysmod {
 
     public static BiomeGenBase moonBiome = new BiomeMoonBiome(40).setColor(
             0xFFD800).setMinMaxHeight(0.1F, 1.5F);
-    
+
     public static BiomeGenBase marsBiome = new BiomeMarsBiome(42).setColor(
-			0xFFD800).setMinMaxHeight(0.1F, 1.5F);
+            0xFFD800).setMinMaxHeight(0.1F, 1.5F);
 
     static EnumArmorMaterial TITANIUMARMOR = EnumHelper.addArmorMaterial(
             "TITANIUMARMOR", 33, new int[] { 3, 8, 6, 3 }, 25);
     public static final EnumToolMaterial TITANIUM = EnumHelper.addToolMaterial(
             "TITANIUM", 2, 20000, 10.0F, 7, 10);
-    
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -120,12 +120,12 @@ public class Spazzysmod {
         titaniumBlockID = config.get(Configuration.CATEGORY_BLOCK,
                 "Titanium Block ID", 501).getInt();
         marsPortalID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
-				"mars Portal ID", 510, "marsPortalID").getInt();
+                "mars Portal ID", 510, "marsPortalID").getInt();
         redRockID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
-				"red Rock ID", 511, "redRockID").getInt();
-		marsRockID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
-				"mars Rock ID", 251, "marsRockID").getInt();
-        
+                "red Rock ID", 511, "redRockID").getInt();
+        marsRockID = config.getTerrainBlock(Configuration.CATEGORY_BLOCK,
+                "mars Rock ID", 251, "marsRockID").getInt();
+
         // items
         titaniumIngotID = config.get(Configuration.CATEGORY_ITEM,
                 "Titanium Ingot ID", 5000).getInt();
@@ -142,11 +142,12 @@ public class Spazzysmod {
 
         config.save();
     }
-    
+
     @Init
     @SuppressWarnings("deprecation")
     public void init(FMLInitializationEvent event) {
         registerEntities();
+        nameTabs();
 
         cheeseBlock = new BlockCheeseBlock(cheeseBlockID, Material.rock)
                 .setUnlocalizedName("cheeseBlock");
@@ -201,9 +202,10 @@ public class Spazzysmod {
 
         });
 
-        titaniumChestplate = new TitaniumArmor(titaniumChestplateID, TITANIUMARMOR,
-                ModLoader.addArmor("TitaniumArmor"), 1).setUnlocalizedName(
-                "titaniumChestPlate").setCreativeTab(CreativeTabs.tabCombat);
+        titaniumChestplate = new TitaniumArmor(titaniumChestplateID,
+                TITANIUMARMOR, ModLoader.addArmor("TitaniumArmor"), 1)
+                .setUnlocalizedName("titaniumChestPlate").setCreativeTab(
+                        CreativeTabs.tabCombat);
         LanguageRegistry.addName(titaniumChestplate, "Titanium Chestplate");
         GameRegistry.registerItem(titaniumChestplate, "Titanium Chestplate");
         GameRegistry.addRecipe(new ItemStack(titaniumChestplate), new Object[] {
@@ -262,35 +264,33 @@ public class Spazzysmod {
                 WorldProviderMoon.class, false);
         DimensionManager.registerDimension(moonDimensionID, moonDimensionID);
         GameRegistry.addBiome(moonBiome);
-        
-        marsRock = new BlockMarsRock(marsRockID, Material.rock)
-		.setUnlocalizedName("marsRock");
-		GameRegistry.registerBlock(marsRock,
-				modid + marsRock.getUnlocalizedName2());
-		LanguageRegistry.addName(marsRock, "Mars Rock");
-		
-		redRock = new BlockRedRock(redRockID, Material.rock)
-		.setUnlocalizedName("redRock");
-		GameRegistry.registerBlock(redRock,
-				modid + redRock.getUnlocalizedName2());
-		LanguageRegistry.addName(redRock, "Red Rock");
-		
 
-		marsPortal = new BlockMarsPortal(marsPortalID)
-		.setUnlocalizedName("marsPortal");
-		GameRegistry.registerBlock(marsPortal,
-				modid + marsPortal.getUnlocalizedName2());
-		LanguageRegistry.addName(marsPortal, "Mars Portal");
-		GameRegistry.addRecipe(new ItemStack(marsPortal), new Object[] { "XXX",
-            "XYX", "XXX", 'X', Spazzysmod.redRock, 'Y',
-            Item.flintAndSteel
-            
-		});
-		
-		DimensionManager.registerProviderType(marsDimensionID,
-				WorldProviderMars.class, false);
-		DimensionManager.registerDimension(marsDimensionID, marsDimensionID);
-		GameRegistry.addBiome(moonBiome);
+        marsRock = new BlockMarsRock(marsRockID, Material.rock)
+                .setUnlocalizedName("marsRock");
+        GameRegistry.registerBlock(marsRock,
+                modid + marsRock.getUnlocalizedName2());
+        LanguageRegistry.addName(marsRock, "Mars Rock");
+
+        redRock = new BlockRedRock(redRockID, Material.rock)
+                .setUnlocalizedName("redRock");
+        GameRegistry.registerBlock(redRock,
+                modid + redRock.getUnlocalizedName2());
+        LanguageRegistry.addName(redRock, "Red Rock");
+
+        marsPortal = new BlockMarsPortal(marsPortalID)
+                .setUnlocalizedName("marsPortal");
+        GameRegistry.registerBlock(marsPortal,
+                modid + marsPortal.getUnlocalizedName2());
+        LanguageRegistry.addName(marsPortal, "Mars Portal");
+        GameRegistry.addRecipe(new ItemStack(marsPortal), new Object[] { "XXX",
+                "XYX", "XXX", 'X', Spazzysmod.redRock, 'Y', Item.flintAndSteel
+
+        });
+
+        DimensionManager.registerProviderType(marsDimensionID,
+                WorldProviderMars.class, false);
+        DimensionManager.registerDimension(marsDimensionID, marsDimensionID);
+        GameRegistry.addBiome(moonBiome);
     }
 
     public void registerEntities() {
@@ -299,11 +299,14 @@ public class Spazzysmod {
         RenderingRegistry.registerEntityRenderingHandler(EntityGopher.class,
                 new RenderGopher());
     }
-        
-        private void nameTabs()
-    	{
-    		LanguageRegistry.instance().addStringLocalization("itemGroup.MoonTab", "en_US", "Moon");
-    		LanguageRegistry.instance().addStringLocalization("itemGroup.SolarSystemTab", "en_US", "Spazzy's Solar System Mod");
-    		LanguageRegistry.instance().addStringLocalization("itemGroup.MarsTab", "en_US", "Mars");
+
+    private void nameTabs() {
+        LanguageRegistry.instance().addStringLocalization("itemGroup.MoonTab",
+                "en_US", "Moon");
+        LanguageRegistry.instance().addStringLocalization(
+                "itemGroup.SolarSystemTab", "en_US",
+                "Spazzy's Solar System Mod");
+        LanguageRegistry.instance().addStringLocalization("itemGroup.MarsTab",
+                "en_US", "Mars");
     }
 }

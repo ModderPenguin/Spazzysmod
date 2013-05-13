@@ -213,8 +213,7 @@ public class TeleporterMarsPortal extends Teleporter {
                         var24 = var16 + (var20 - 1) * var18 - var19 * var30;
                         var33 = var21 < 0;
                         this.field_85192_a.setBlock(var22, var23, var24,
-                                var33 ? Spazzysmod.redRock.blockID : 0, 2,
-                                2);
+                                var33 ? Spazzysmod.redRock.blockID : 0, 2, 2);
                     }
                 }
             }
@@ -442,8 +441,7 @@ public class TeleporterMarsPortal extends Teleporter {
                         int var19 = var11 + var15 * var13 - var14 * var12;
                         boolean var20 = var16 < 0;
                         this.field_85192_a.setBlock(var17, var18, var19,
-                                var20 ? Spazzysmod.redRock.blockID : 0, 2,
-                                2);
+                                var20 ? Spazzysmod.redRock.blockID : 0, 2, 2);
                     }
                 }
             }
