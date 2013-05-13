@@ -12,7 +12,7 @@ public class BlockRedRock extends Block {
 
     public BlockRedRock(int id, Material par2Material) {
         super(id, par2Material);
-        this.setCreativeTab(SpazzysTabs.tabMoon);
+        this.setCreativeTab(SpazzysTabs.tabMars);
 
     }
 

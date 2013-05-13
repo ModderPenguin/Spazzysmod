@@ -4,13 +4,13 @@ import java.util.Random;
 
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import spazzysmod.creativetab.SpazzysTabs;
 import spazzysmod.world.SpazzysDimensions;
 import spazzysmod.world.TeleporterMoonPortal;
 import cpw.mods.fml.relauncher.Side;
@@ -21,7 +21,7 @@ public class BlockMoonPortal extends BlockBreakable {
     public BlockMoonPortal(int par1) {
         super(par1, "portal", Material.portal, false);
         this.setTickRandomly(true);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(SpazzysTabs.tabMoon);
     }
 
     /**
