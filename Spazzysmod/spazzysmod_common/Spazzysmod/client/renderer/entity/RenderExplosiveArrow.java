@@ -1,18 +1,21 @@
-package Spazzysmod.client.renderer.entity;
-import Spazzysmod.item.explosiveArrow;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+package spazzysmod.client.renderer.entity;
+
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+
+import spazzysmod.entity.projectile.EntityExplosiveArrow;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderExplosiveArrow extends Render
 {
-public void renderGlassArrow(explosiveArrow par1EntityGlassArrow, double par2, double par4, double par6, float par8, float par9)
+public void renderGlassArrow(EntityExplosiveArrow par1EntityGlassArrow, double par2, double par4, double par6, float par8, float par9)
 {
 this.loadTexture("Arrows/explosiveArrows.png");
 GL11.glPushMatrix();
@@ -75,12 +78,10 @@ GL11.glPopMatrix();
 
 public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
 {
-this.RenderExplosiveArrow((explosiveArrow)par1Entity, par2, par4, par6, par8, par9);
+this.renderGlassArrow((EntityExplosiveArrow)par1Entity, par2, par4, par6, par8, par9);
 }
 
-private void RenderExplosiveArrow(explosiveArrow par1Entity, double par2,
-		double par4, double par6, float par8, float par9) {
-	// TODO Auto-generated method stub
-	
+public RenderExplosiveArrow(EntityExplosiveArrow par1Entity, double par2,
+		double par4, double par6, float par8, float par9) {	
 }
 }

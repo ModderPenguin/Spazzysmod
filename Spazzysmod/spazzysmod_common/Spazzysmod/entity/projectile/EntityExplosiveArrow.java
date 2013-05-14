@@ -1,9 +1,7 @@
-package Spazzysmod.item;
+package spazzysmod.entity.projectile;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
@@ -11,6 +9,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -21,11 +20,10 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IThrowableEntity;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-
-
-public class explosiveArrow extends Entity {
+public class EntityExplosiveArrow extends EntityArrow {
 
 
 
@@ -51,14 +49,14 @@ public class explosiveArrow extends Entity {
 	    /** The amount of knockback an arrow applies when it hits a mob. */
 	    private int knockbackStrength;
 
-	    public explosiveArrow(World par1World)
+	    public EntityExplosiveArrow(World par1World)
 	    {
 	        super(par1World);
 	        this.renderDistanceWeight = 10.0D;
 	        this.setSize(0.5F, 0.5F);
 	    }
 
-	    public explosiveArrow(World par1World, double par2, double par4, double par6)
+	    public EntityExplosiveArrow(World par1World, double par2, double par4, double par6)
 	    {
 	        super(par1World);
 	        this.renderDistanceWeight = 10.0D;
@@ -67,7 +65,7 @@ public class explosiveArrow extends Entity {
 	        this.yOffset = 0.0F;
 	    }
 
-	    public explosiveArrow(World par1World, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving, float par4, float par5)
+	    public EntityExplosiveArrow(World par1World, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving, float par4, float par5)
 	    {
 	        super(par1World);
 	        this.renderDistanceWeight = 10.0D;
@@ -97,7 +95,7 @@ public class explosiveArrow extends Entity {
 	        }
 	    }
 
-	    public explosiveArrow(World par1World, EntityLiving par2EntityLiving, float par3)
+	    public EntityExplosiveArrow(World par1World, EntityLiving par2EntityLiving, float par3)
 	    {
 	        super(par1World);
 	        this.renderDistanceWeight = 10.0D;
@@ -256,7 +254,8 @@ public class explosiveArrow extends Entity {
 	            }
 
 	            Entity entity = null;
-	            List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.addCoord(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
+	            @SuppressWarnings("rawtypes")
+                List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.addCoord(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
 	            double d0 = 0.0D;
 	            int l;
 	            float f1;

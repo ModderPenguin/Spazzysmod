@@ -1,29 +1,28 @@
-package Spazzysmod.item;
+package spazzysmod.item;
 
 import java.awt.Dimension;
 
-import Spazzysmod.Spazzysmod;
-
-import cpw.mods.fml.client.ITextureFX;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.RenderEngine;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.client.texturepacks.ITexturePack;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import spazzysmod.Spazzysmod;
+import spazzysmod.entity.projectile.EntityExplosiveArrow;
+import cpw.mods.fml.client.ITextureFX;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class explosiveBow extends ItemBow implements ITextureFX {
+public class ItemExplosiveBow extends ItemBow implements ITextureFX {
 
-	public explosiveBow(int par1) {
+	public ItemExplosiveBow(int par1) {
 		super(par1);
 		// TODO Auto-generated constructor stub
 	}
@@ -47,7 +46,7 @@ public class explosiveBow extends ItemBow implements ITextureFX {
 
         boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (flag || par3EntityPlayer.inventory.hasItem(Spazzysmod.explosiveArrow.itemID))
+        if (flag || par3EntityPlayer.inventory.hasItem(Spazzysmod.EntityExplosiveArrow.itemID))
         {
             float f = (float)j / 20.0F;
             f = (f * f + f * 2.0F) / 3.0F;
@@ -62,7 +61,7 @@ public class explosiveBow extends ItemBow implements ITextureFX {
                 f = 1.0F;
             }
 
-            explosiveArrow explosiveArrow = new explosiveArrow(par2World, par3EntityPlayer, f * 2.0F);
+            EntityExplosiveArrow explosiveArrow = new EntityExplosiveArrow(par2World, par3EntityPlayer, f * 2.0F);
 
             if (f == 1.0F)
             {
