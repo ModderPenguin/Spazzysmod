@@ -1,4 +1,4 @@
-package spazzysmod.config;
+package Spazzysmod.config;
 
 import net.minecraftforge.common.Configuration;
 
@@ -15,6 +15,8 @@ public class SpazzysConfig {
 
     public static int titaniumIngotID;
     public static int titaniumSwordID;
+    public static int explosiveArrowID;
+    public static int explosiveBowID;
 
     public static int titaniumHelmetID;
     public static int titaniumChestplateID;
@@ -50,6 +52,12 @@ public class SpazzysConfig {
                 "Titanium Ingot ID", 5000).getInt();
         titaniumSwordID = config.get(Configuration.CATEGORY_ITEM,
                 "Titanium Sword ID", 5001).getInt();
+        explosiveArrowID = config.get(Configuration.CATEGORY_ITEM,
+                "Explosive Arrow ID", 5006).getInt();
+        explosiveBowID = config.get(Configuration.CATEGORY_ITEM,
+                "Explosive Bow ID", 5007).getInt();
+
+        // armor
         titaniumHelmetID = config.get(Configuration.CATEGORY_ITEM,
                 "Titanium Helmet ID", 5002).getInt();
         titaniumChestplateID = config.get(Configuration.CATEGORY_ITEM,

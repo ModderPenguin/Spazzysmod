@@ -1,4 +1,4 @@
-package spazzysmod.world.chunk;
+package Spazzysmod.world.chunk;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;
@@ -40,7 +40,7 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import spazzysmod.blocks.MoonBlocks;
+import Spazzysmod.blocks.MoonBlocks;
 
 public class ChunkManagerMoon implements IChunkProvider {
 

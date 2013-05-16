@@ -1,10 +1,10 @@
-package spazzysmod.item;
+package Spazzysmod.item;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSword;
-import spazzysmod.Spazzysmod;
+import Spazzysmod.SpazzysmodBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,7 +18,7 @@ public class ItemTitaniumSword extends ItemSword {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-        this.itemIcon = par1IconRegister.registerIcon(Spazzysmod.modid + ":"
+        this.itemIcon = par1IconRegister.registerIcon(SpazzysmodBase.modid + ":"
                 + (this.getUnlocalizedName().substring(5)));
     }
 }

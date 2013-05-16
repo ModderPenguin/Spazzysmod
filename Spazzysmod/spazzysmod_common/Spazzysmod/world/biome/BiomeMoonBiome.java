@@ -1,8 +1,8 @@
-package spazzysmod.world.biome;
+package Spazzysmod.world.biome;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-import spazzysmod.entity.passive.EntityGopher;
+import Spazzysmod.entity.passive.EntityGopher;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class BiomeMoonBiome extends BiomeGenBase {

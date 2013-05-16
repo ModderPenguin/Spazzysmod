@@ -1,4 +1,4 @@
-package spazzysmod.world;
+package Spazzysmod.world;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.PortalPosition;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
-import spazzysmod.blocks.MoonBlocks;
+import Spazzysmod.blocks.MoonBlocks;
 
 public class TeleporterMoonPortal extends Teleporter {
 

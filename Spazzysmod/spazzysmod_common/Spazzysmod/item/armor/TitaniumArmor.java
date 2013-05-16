@@ -1,12 +1,12 @@
-package spazzysmod.item.armor;
+package Spazzysmod.item.armor;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
-import spazzysmod.Spazzysmod;
-import spazzysmod.item.SpazzysItems;
+import Spazzysmod.SpazzysmodBase;
+import Spazzysmod.item.SpazzysItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -35,7 +35,7 @@ public class TitaniumArmor extends ItemArmor implements IArmorTextureProvider {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-        this.itemIcon = par1IconRegister.registerIcon(Spazzysmod.modid + ":"
+        this.itemIcon = par1IconRegister.registerIcon(SpazzysmodBase.modid + ":"
                 + (this.getUnlocalizedName().substring(5)));
     }
 }

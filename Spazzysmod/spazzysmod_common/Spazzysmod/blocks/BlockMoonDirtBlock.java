@@ -1,10 +1,10 @@
-package spazzysmod.blocks;
+package Spazzysmod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import spazzysmod.Spazzysmod;
-import spazzysmod.creativetab.SpazzysTabs;
+import Spazzysmod.SpazzysmodBase;
+import Spazzysmod.creativetab.SpazzysTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,7 +20,7 @@ public class BlockMoonDirtBlock extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-        this.blockIcon = par1IconRegister.registerIcon(Spazzysmod.modid + ":"
+        this.blockIcon = par1IconRegister.registerIcon(SpazzysmodBase.modid + ":"
                 + this.getUnlocalizedName2());
     }
 

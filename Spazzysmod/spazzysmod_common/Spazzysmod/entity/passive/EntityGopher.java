@@ -1,4 +1,4 @@
-package spazzysmod.entity.passive;
+package Spazzysmod.entity.passive;
 
 import net.minecraft.block.BlockCloth;
 import net.minecraft.entity.Entity;
@@ -31,7 +31,7 @@ import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import spazzysmod.Spazzysmod;
+import Spazzysmod.SpazzysmodBase;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -53,7 +53,7 @@ public class EntityGopher extends EntityTameable {
 
     public EntityGopher(World par1World) {
         super(par1World);
-        this.texture = "/mods/" + Spazzysmod.modid
+        this.texture = "/mods/" + SpazzysmodBase.modid
                 + "/textures/models/Gopher.png";
         this.setSize(1.0F, 1.1F);
         this.moveSpeed = 0.3F;

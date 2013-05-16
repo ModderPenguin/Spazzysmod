@@ -1,9 +1,9 @@
-package spazzysmod.blocks;
+package Spazzysmod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import spazzysmod.config.SpazzysConfig;
-import spazzysmod.world.gen.feature.TitaniumWorldGenerator;
+import Spazzysmod.config.SpazzysConfig;
+import Spazzysmod.world.gen.feature.TitaniumWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 

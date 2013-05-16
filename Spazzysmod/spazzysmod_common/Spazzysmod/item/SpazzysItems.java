@@ -1,13 +1,13 @@
-package spazzysmod.item;
+package Spazzysmod.item;
 
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
-import spazzysmod.config.SpazzysConfig;
-import spazzysmod.creativetab.SpazzysTabs;
-import spazzysmod.item.armor.TitaniumArmor;
+import Spazzysmod.config.SpazzysConfig;
+import Spazzysmod.creativetab.SpazzysTabs;
+import Spazzysmod.item.armor.TitaniumArmor;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -15,6 +15,8 @@ public class SpazzysItems {
 
     public static Item titaniumIngot;
     public static Item titaniumSword;
+    public static Item explosiveArrow;
+    public static Item explosiveBow;
 
     public static Item titaniumHelmet;
     public static Item titaniumChestplate;
@@ -67,5 +69,16 @@ public class SpazzysItems {
                 SpazzysTabs.tabSolarSystem);
         LanguageRegistry.addName(titaniumSword, "Titanium Sword");
         GameRegistry.registerItem(titaniumSword, "Titanium Sword");
+
+        explosiveArrow = new Item(SpazzysConfig.explosiveArrowID)
+                .setUnlocalizedName("explosiveArrow").setCreativeTab(
+                        SpazzysTabs.tabSolarSystem);
+        LanguageRegistry.addName(explosiveArrow, "Explosive Arrow");
+        GameRegistry.registerItem(explosiveArrow, "Explosive Arrow");
+        
+        explosiveBow = new ItemExplosiveBow(SpazzysConfig.explosiveBowID).setUnlocalizedName("explosiveBow").setCreativeTab(SpazzysTabs.tabSolarSystem);
+        LanguageRegistry.addName(explosiveBow, "Explosive Bow");
+        GameRegistry.registerItem(explosiveBow, "Explosive Bow");
+
     }
 }

@@ -1,11 +1,11 @@
-package spazzysmod.crafting;
+package Spazzysmod.crafting;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import spazzysmod.blocks.MarsBlocks;
-import spazzysmod.blocks.MoonBlocks;
-import spazzysmod.blocks.SpazzysBlocks;
-import spazzysmod.item.SpazzysItems;
+import Spazzysmod.blocks.MarsBlocks;
+import Spazzysmod.blocks.MoonBlocks;
+import Spazzysmod.blocks.SpazzysBlocks;
+import Spazzysmod.item.SpazzysItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ReciperManager {

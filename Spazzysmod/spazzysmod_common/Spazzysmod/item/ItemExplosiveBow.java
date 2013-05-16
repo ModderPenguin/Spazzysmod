@@ -1,35 +1,29 @@
-package spazzysmod.item;
+package Spazzysmod.item;
 
-import java.awt.Dimension;
-
-import net.minecraft.client.renderer.RenderEngine;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.client.texturepacks.ITexturePack;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
-import spazzysmod.Spazzysmod;
-import spazzysmod.entity.projectile.EntityExplosiveArrow;
-import cpw.mods.fml.client.ITextureFX;
+import Spazzysmod.SpazzysmodBase;
+import Spazzysmod.entity.projectile.EntityExplosiveArrow;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemExplosiveBow extends ItemBow implements ITextureFX {
+public class ItemExplosiveBow extends ItemBow {
 
 	public ItemExplosiveBow(int par1) {
 		super(par1);
-		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
-        this.itemIcon = par1IconRegister.registerIcon(Spazzysmod.modid + ":"
+        this.itemIcon = par1IconRegister.registerIcon(SpazzysmodBase.modid + ":"
                 + (this.getUnlocalizedName().substring(5)));
     }
     public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
@@ -46,7 +40,7 @@ public class ItemExplosiveBow extends ItemBow implements ITextureFX {
 
         boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (flag || par3EntityPlayer.inventory.hasItem(Spazzysmod.EntityExplosiveArrow.itemID))
+        if (flag || par3EntityPlayer.inventory.hasItem(SpazzysItems.explosiveArrow.itemID))
         {
             float f = (float)j / 20.0F;
             f = (f * f + f * 2.0F) / 3.0F;
@@ -96,7 +90,7 @@ public class ItemExplosiveBow extends ItemBow implements ITextureFX {
             }
             else
             {
-                par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.itemID);
+                par3EntityPlayer.inventory.consumeInventoryItem(SpazzysItems.explosiveArrow.itemID);
             }
 
             if (!par2World.isRemote)
@@ -110,30 +104,4 @@ public class ItemExplosiveBow extends ItemBow implements ITextureFX {
     {
         return par1ItemStack;
     }
-	@Override
-	public void onTexturePackChanged(RenderEngine engine,
-			ITexturePack texturepack, Dimension dimensions) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onTextureDimensionsUpdate(int width, int height) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setErrored(boolean errored) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean getErrored() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
 }

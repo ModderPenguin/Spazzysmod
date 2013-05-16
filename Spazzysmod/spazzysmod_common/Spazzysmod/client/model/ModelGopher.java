@@ -1,4 +1,4 @@
-package spazzysmod.client.model;
+package Spazzysmod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
